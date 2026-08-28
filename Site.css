@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #1b4d3e;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-weight: bold;
+}
+    
+.agendar-button {
+  background-color: #2e7d32;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.hero {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:url('clinica.jpeg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+  filter: blur(8px);
+  transform: scale(1.05);
+  z-index: -1;
+}
+
+/* 1. ESTILOS DE COMPUTADOR (Fora do @media) */
+.hero-content {
+  display: flex;
+  flex-direction: row; /* Fica lado a lado por padrão */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 2rem;
+  z-index: 1;
+}
+
+.hero-text {
+  flex: 1;
+  margin-left: 2rem;
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-image img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+/* 2. ESTILOS DE CELULAR (Apenas o que muda em telas pequenas) */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column-reverse; /* Empilha no celular: logo acima do texto */
+    text-align: center;
+  }
+
+  .hero-text {
+    margin-left: 0;
+    margin-bottom: 10rem;
+  }
+
+  .hero-image {
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+}
+.services {
+  padding: 4rem 2rem;
+  background-color: #f0f0f0;
+  text-align:center;
+}
+.card-serv {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 2em;    
+}
+
+.card {
+    background-color: #f0f0f0;
+    width: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-content h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+}
