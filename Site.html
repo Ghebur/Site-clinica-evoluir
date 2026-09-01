@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>"Clinica Evoluir"</title>
+    <!-- Link Swiper's CSS -->
+
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+
     <link rel="stylesheet" href="Site.css">
 </head>
 <body class="body">
@@ -32,7 +36,7 @@
                 </div>
                 <!--<div class="hero-image">
                     <img src="assets/logo.png" alt="Imagem da logo-clinica">
-                </div>-->
+                </div>-->   
             </div>
         </section>
         <section class="services">
@@ -41,14 +45,14 @@
                 <div class="card">
                     <img src="assets/terapia.jpg" alt="Psicoterapia">
                     <div class="card-content">
-                        <h2>Psicoterapia</h2>
+                        <h2>Psicanálise</h2>
                         <p>Atendimento psicológico individual e em grupo.</p>
                     </div>
                 </div>
                 <div class="card">
                     <img src="assets/analise.jpg" alt="Análise Psicológica">
                     <div class="card-content">
-                        <h2>Análise Psicológica</h2>
+                        <h2>Psicoterapia individual</h2>
                         <p>Atendimento psicológico individual e em grupo.</p>
                     </div>
                 </div>
@@ -60,23 +64,9 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets/profissao.jpg" alt="Orientação profissional">
-                    <div class="card-content">
-                        <h2>Orientação profissional</h2>
-                        <p>Atendimento psicológico individual e em grupo.</p>
-                    </div>
-                </div>
-                <div class="card">
                     <img src="assets/porte.jpg" alt="Porte de arma">
                     <div class="card-content">
-                        <h2>Porte de arma</h2>
-                        <p>Atendimento psicológico individual e em grupo.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="assets/autismo.jpg" alt="Avaliação para autismo">
-                    <div class="card-content">
-                        <h2>Avaliação para autismo</h2>
+                        <h2>Avaliação psicológica - Porte de arma</h2>
                         <p>Atendimento psicológico individual e em grupo.</p>
                     </div>
                 </div>
@@ -85,7 +75,114 @@
 
         </section>  
         <section class="profissionals">
+            <!-- O container principal recebe a classe 'swiper' -->
+            <div class="slider-container swiper">
+                
+                <!-- O container dos slides PRECISA da classe 'swiper-wrapper' -->
+                <div class="swiper-wrapper">
+                    
+                    <!-- Cada item do slider PRECISA da classe 'swiper-slide' -->
+                    <div class="card-profissional swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="assets/casal.jpg" alt="Psicóloga Vera" class="card-img">
+                            </div>
+                        </div>
 
+                        <div class="card-profissional-content">
+                            <h2 class="name">Vera</h2>
+                            <p class="description">Psicóloga clínica com especialização em terapia cognitivo-comportamental.</p>    
+                            <button class="button-profissional">Saiba mais</button>
+                        </div>
+                    </div>
+
+                    <div class="card-profissional swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="assets/analise.jpg" alt="Psicóloga Vera" class="card-img">
+                            </div>
+                        </div>
+
+                        <div class="card-profissional-content">
+                            <h2 class="name">Vera</h2>
+                            <p class="description">Psicóloga clínica com especialização em terapia cognitivo-comportamental.</p>    
+                            <button class="button-profissional">Saiba mais</button>
+                        </div>
+                    </div>
+
+                    <div class="card-profissional swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="assets/autismo.jpg" alt="Psicóloga Vera" class="card-img">
+                            </div>
+                        </div>
+
+                        <div class="card-profissional-content">
+                            <h2 class="name">Vera</h2>
+                            <p class="description">Psicóloga clínica com especialização em terapia cognitivo-comportamental.</p>    
+                            <button class="button-profissional">Saiba mais</button>
+                        </div>
+                    </div>
+
+                    <div class="card-profissional swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="assets/profissao.jpg" alt="Psicóloga Vera" class="card-img">
+                            </div>
+                        </div>
+
+                        <div class="card-profissional-content">
+                            <h2 class="name">Vera</h2>
+                            <p class="description">Psicóloga clínica com especialização em terapia cognitivo-comportamental.</p>    
+                            <button class="button-profissional">Saiba mais</button>
+                        </div>
+                    </div>
+
+                    <div class="card-profissional swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="assets/casal.jpg" alt="Psicóloga Vera" class="card-img">
+                            </div>
+                        </div>
+
+                        <div class="card-profissional-content">
+                            <h2 class="name">Vera</h2>
+                            <p class="description">Psicóloga clínica com especialização em terapia cognitivo-comportamental.</p>    
+                            <button class="button-profissional">Saiba mais</button>
+                        </div>
+                    </div>
+
+                    <div class="card-profissional swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="assets/casal.jpg" alt="Psicóloga Vera" class="card-img">
+                            </div>
+                        </div>
+
+                        <div class="card-profissional-content">
+                            <h2 class="name">Vera</h2>
+                            <p class="description">Psicóloga clínica com especialização em terapia cognitivo-comportamental.</p>    
+                            <button class="button-profissional">Saiba mais</button>
+                        </div>
+                    </div>
+
+                    
+
+                    <!-- Adicione os outros cards aqui, todos com a classe swiper-slide -->
+
+                </div>
+
+                <!-- Botões e Paginação DENTRO do container .swiper -->
+                <div class="swiper-button-next swiper-navBtn"></div>
+                <div class="swiper-button-prev swiper-navBtn"></div>
+                <div class="swiper-pagination"></div>
+            </div>
         </section>
         <section class="aboutUs">
 
@@ -105,6 +202,9 @@
     </main>
 </body>
 
+<!-- Swiper JS -->
+    <script src="swiper-bundle.min.js"></script>
+    <script src="scripts.js"></script>
 
 
 </html>
