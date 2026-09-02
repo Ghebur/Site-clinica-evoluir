@@ -1,18 +1,17 @@
-var swiper = new Swiper(".slider-container", {
-        slidesPerView: 3,
+var swiper = new Swiper(".slider-content", {
+        slidesPerView: 2,
         spaceBetween: 25,
         loop: true,
-        centeredSlides: true,
         fade: true,
         grabCursor: true,
         pagination: {
-          el: '.swiper-pagination',
+          el: '.prof-pagination',
           clickable: true,
           dynamicBullets: true,
         },  
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: '.prof-next',
+          prevEl: '.prof-prev',
         },
      
 
@@ -24,7 +23,18 @@ var swiper = new Swiper(".slider-container", {
           slidesPerView: 2,
         },
         950: {
-          slidesPerView: 3,
+          slidesPerView: 2,
         },
       }
      });
+
+var swiper = new Swiper('.ambientes-slider', {
+        pagination: {
+          el: '.amb-pagination',
+          type: 'progressbar',
+        },
+        navigation: {
+          nextEl: '.amb-next',
+          prevEl: '.amb-prev',
+        },
+      });
