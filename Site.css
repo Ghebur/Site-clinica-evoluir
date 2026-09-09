@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 .header {
   background-color: #1b4d3e;
   color: #fff;
@@ -439,6 +443,7 @@
 .button-profissional {
   border: none;
   font-size: 0.9rem;
+  text-decoration: none !important;
   color: #fff;
   padding: 8px 18px;
   background-color: #286d58;
