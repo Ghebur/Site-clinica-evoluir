@@ -364,7 +364,7 @@ html{
 }
 
 .card-profissional:hover {
-  transform: translateY(-8px); /* Eleva o card suavemente */
+
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
 }
 
@@ -743,18 +743,17 @@ a.button-profissional.agenda-fechada {
     height: 300px;
   }
 }
-
-/* Container Externo */
+/* Container da Seção */
 .about {
   padding: 5rem 2rem;
-  background-color: #f4f7f5; /* Fundo suave para dar contraste com os outros blocos brancos */
+  background-color: #f4f7f5;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
 }
 
-/* Card Principal Emoldurado */
+/* Card Emoldurado */
 .about-card {
   max-width: 1100px;
   width: 100%;
@@ -765,7 +764,6 @@ a.button-profissional.agenda-fechada {
   border: 1px solid rgba(27, 77, 62, 0.1);
 }
 
-/* Tag Pill */
 .about-tag {
   display: inline-block;
   background-color: #e8f0ec;
@@ -780,7 +778,6 @@ a.button-profissional.agenda-fechada {
   margin-bottom: 1rem;
 }
 
-/* Título */
 .about-header h2 {
   font-family: 'Lora', serif;
   font-size: 2rem;
@@ -789,30 +786,66 @@ a.button-profissional.agenda-fechada {
   line-height: 1.3;
 }
 
-/* Layout do Texto em 2 Colunas no PC */
+/* Grid de 2 Colunas */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
+  align-items: stretch; /* Garante altura igual entre as duas colunas */
 }
 
 .about-text-block p {
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   color: #4a5568;
-  line-height: 1.8;
+  line-height: 1.75;
   margin-bottom: 1.2rem;
+  text-align: justify; /* Alinha o texto na margem direita e esquerda */
+  hyphens: auto;
 }
 
-.about-text-block p:last-child {
-  margin-bottom: 0;
+.about-text-block:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilização dos 3 Pilares na Coluna da Direita */
+.about-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 2rem; /* Aumente este valor (ex: 4rem, 5rem) para descer mais */
+}
+
+.pillar-item {
+  background-color: #f8faf9;
+  border-left: 3px solid #1b4d3e;
+  padding: 0.9rem 1.2rem;
+  border-radius: 0 12px 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.pillar-item strong {
+  font-family: 'Lora', serif;
+  font-size: 1.05rem;
+  color: #1b4d3e;
+}
+
+.pillar-item span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #666666;
+  line-height: 1.4;
 }
 
 /* Banner de Destaque da Frase Final */
 .about-quote {
   margin-top: 2.5rem;
   background: linear-gradient(135deg, #1b4d3e 0%, #12352b 100%);
-  padding: 1.8rem 2rem;
+  padding: 1.6rem 2rem;
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(27, 77, 62, 0.15);
@@ -824,7 +857,6 @@ a.button-profissional.agenda-fechada {
   font-style: italic;
   color: #ffffff;
   margin: 0;
-  letter-spacing: 0.3px;
 }
 
 /* Responsividade */
@@ -835,7 +867,7 @@ a.button-profissional.agenda-fechada {
   
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 1.2rem;
+    gap: 1.5rem;
   }
 
   .about-header h2 {
