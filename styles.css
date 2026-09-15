@@ -1,70 +1,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:wght@500;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html{
+html {
   scroll-behavior: smooth;
+}
+
+.body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden; 
 }
 
 .header {
   background-color: #1b4d3e;
   color: #fff;
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   font-weight: bold;
+  height: 75px;
 }
+
 .logo-nome {
   display: flex;
   align-items: center;
 }
+
 .logo-img {
-  height: 40px; /* Altura ideal para cabeçalhos (ajuste entre 35px e 50px se precisar) */
-  width: auto;  /* Mantém a proporção original da imagem sem achatar */
+  height: 40px;
+  width: auto;
   object-fit: contain;
 }
-    
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 2;
+}
+
+.header-actions a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 50px;
+}
+
+.header-actions a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
 .agendar-button {
   background-color: #2e7d32;
-  color: white;
+  color: white !important;
   padding: 0.6rem 1.2rem;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 50px;
   font-weight: bold;
 }
 
 .menu-button {
+  display: none;
   background: none;
   border: none;
   color: white;
   font-size: 1.8rem;
   cursor: pointer;
-  margin-left: 1rem;
-}
-.body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  color: #333;
-    
+  padding: 4px;
 }
 
 .hero {
   position: relative;
-  min-height: 70vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   color: white;
   isolation: isolate;
+  padding: 2rem 1.5rem;
 }
 
 .hero::before {
@@ -74,35 +102,31 @@ html{
   left: 0;
   width: 100%;
   height: 100%;
-  background-image:url('assets/clinica.jpeg');
+  background-image: url('assets/clinica.jpeg');
   background-size: cover;
   background-position: center;
   z-index: -1;
 }
 
-/* 1. ESTILOS DE COMPUTADOR (Fora do @media) */
 .hero-content {
   display: flex;
-  flex-direction: row; /* Fica lado a lado por padrão */
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
-  max-width: 1100px;
-  padding-left: 0;
-  margin-left: -400px;
+  max-width: 1200px;
+  margin: 0 auto;
   z-index: 1;
 }
 
 .hero-text {
-  flex: 1;
-  max-width: 500px; /* Limita a largura da caixa para não ocupar a tela toda */
-  background: rgba(255, 255, 255, 0.55); /* Branco com 60% de opacidade */
-  backdrop-filter: blur(2px); /* Suaviza sutilmente a imagem exatamente atrás do card */
-  padding: 3.5rem;
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(4px);
+  padding: 3rem;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* Sombra leve para dar profundidade */
- 
-  
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -114,48 +138,63 @@ html{
   font-size: 2.2rem;
   font-weight: 600;
   line-height: 1.25;
-  color: #1b4d3e; /* Verde institucional da clínica */
+  color: #1b4d3e;
   margin-bottom: 1rem;
 }
+
 .hero-text p {
   font-family: 'Inter', sans-serif;
   font-size: 1.05rem;
   font-weight: 400;
   line-height: 1.6;
-  color: #333333; /* Texto escuro para perfeita leitura */
-  margin-bottom: 0;
+  color: #333333;
 }
 
-.hero-image {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.hero-image img {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-}
-
-/* 2. ESTILOS DE CELULAR (Apenas o que muda em telas pequenas) */
-@media (max-width: 768px) {
+@media (min-width: 1300px) {
   .hero-content {
-    flex-direction: column-reverse; /* Empilha no celular: logo acima do texto */
-    text-align: center;
+    margin-left: 200px; 
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1299px) {
+  .hero-content {
+    margin-left: 0;
+    justify-content: flex-start; 
+    padding-left: 2rem;
+  }
+  
+  .hero-text {
+    max-width: 450px;
+    padding: 2.2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    margin-left: 0;
+    justify-content: center;
   }
 
   .hero-text {
-    margin-left: 0;
+    max-width: 100%;
+    padding: 1.8rem 1.2rem;
   }
 
-  .hero-image {
-    justify-content: center;
-    margin-bottom: 1.5rem;
+  .hero-text h1 {
+    font-size: 1.6rem;
   }
 }
 
-/* Seção Geral */
 .services {
   padding: 5rem 1.5rem;
   background-color: #ffffff;
@@ -166,7 +205,6 @@ html{
   box-sizing: border-box;
 }
 
-/* Cabeçalho no Topo */
 .services-header {
   text-align: center;
   max-width: 650px;
@@ -186,16 +224,14 @@ html{
   color: #666666;
 }
 
-/* GRADE DE 5 COLUNAS LADO A LADO NO PC */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Força os 5 cards na mesma linha */
+  grid-template-columns: repeat(5, 1fr); 
   gap: 1.2rem;
   max-width: 1400px;
   width: 100%;
 }
 
-/* Card Individual */
 .card {
   background-color: #ffffff;
   border-radius: 20px;
@@ -213,7 +249,7 @@ html{
 
 .card img {
   width: 100%;
-  height: 160px; /* Altura ajustada para equilibrar com os 5 cards na linha */
+  height: 160px;
   object-fit: cover;
 }
 
@@ -226,7 +262,7 @@ html{
 
 .card-content h2 {
   font-family: 'Lora', serif;
-  font-size: 1.15rem; /* Tamanho de fonte ajustado para os títulos caberem sem quebrar linhas desnecessárias */
+  font-size: 1.15rem; 
   color: #1b4d3e;
   margin-bottom: 8px;
 }
@@ -239,26 +275,24 @@ html{
   margin: 0;
 }
 
-/* Quebras de responsividade conforme a tela diminui */
 @media (max-width: 1100px) {
   .services-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 por linha em telas médias */
+    grid-template-columns: repeat(3, 1fr); 
   }
 }
 
 @media (max-width: 768px) {
   .services-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 por linha em tablets */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
 @media (max-width: 500px) {
   .services-grid {
-    grid-template-columns: 1fr; /* 1 por linha em celulares */
+    grid-template-columns: 1fr;
   }
 }
 
-/* Seção Principal */
 .profissionals {
   padding: 5rem 1rem;
   background-color: #f8f9fa;
@@ -267,7 +301,6 @@ html{
   align-items: center;
 }
 
-/* Cabeçalho */
 .professionals-header {
   text-align: center;
   max-width: 600px;
@@ -281,7 +314,6 @@ html{
   margin-bottom: 0.5rem;
 }
 
-/* Grupo de Informações */
 .info-group {
   width: 100%;
   text-align: left;
@@ -289,7 +321,6 @@ html{
   box-sizing: border-box;
 }
 
-/* Título da Categoria */
 .group-title {
   display: block;
   font-family: 'Inter', sans-serif;
@@ -303,7 +334,6 @@ html{
   padding-bottom: 4px;
 }
 
-/* Lista sem recuos estranhos */
 .description-list {
   list-style: none;
   padding: 0;
@@ -311,11 +341,10 @@ html{
   width: 100%;
 }
 
-/* Flexbox no Item: garante alinhamento perfeito de todas as linhas */
 .description-list li {
   display: flex;
-  align-items: flex-start; /* Alinha o ponto no topo da primeira linha */
-  gap: 8px;                /* Espaço fixo entre o ponto e o texto */
+  align-items: flex-start; 
+  gap: 8px;                
   font-family: 'Inter', sans-serif;
   font-size: 0.88rem;
   color: #555555;
@@ -323,14 +352,13 @@ html{
   margin-bottom: 0.4rem;
 }
 
-/* Marcador (Ponto) como elemento Flex isolado */
 .description-list li::before {
   content: "•";
   color: #1b4d3e;
   font-weight: bold;
   font-size: 1.1rem;
   line-height: 1;
-  flex-shrink: 0; /* Impede o ponto de ser esmagado pelo texto */
+  flex-shrink: 0; 
 }
 
 .description-list li strong {
@@ -343,16 +371,14 @@ html{
   color: #666666;
 }
 
-/* Grid Lado a Lado */
 .professionals-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas grandes */
+  grid-template-columns: repeat(4, 1fr); 
   gap:3rem;
   max-width: 1400px;
   width: 100%;
 }
 
-/* Estilo e Animação do Card */
 .card-profissional {
   border-radius: 20px;
   background-color: #ffffff;
@@ -367,7 +393,6 @@ html{
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Detalhes internos mantidos */
 .image-content {
   position: relative;
   display: flex;
@@ -459,23 +484,23 @@ html{
 a.button-profissional.agenda-fechada {
   background-color: #e0e0e0 !important;
   color: #888888 !important;
-  pointer-events: none; /* Bloqueia o clique do usuário */
-  cursor: not-allowed;  /* Exibe o ícone de bloqueado ao passar o cursor */
+  pointer-events: none; 
+  cursor: not-allowed;  
   box-shadow: none !important;
   transform: none !important;
   border: 1px solid #cccccc;
 }
 
-/* Responsividade (Tablet e Celular) */
+
 @media (max-width: 1024px) {
   .professionals-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 por linha no Tablet */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
 @media (max-width: 600px) {
   .professionals-grid {
-    grid-template-columns: 1fr; /* 1 por linha no Celular */
+    grid-template-columns: 1fr; 
     gap: 1.5rem;
 
     .card-profissional-content{
@@ -520,7 +545,6 @@ a.button-profissional.agenda-fechada {
   
 }
 
-/* Container Principal com Fundo Verde */
 .instalaions {
   background-color: #1b4d3e;
   padding: 5rem 2rem;
@@ -535,7 +559,6 @@ a.button-profissional.agenda-fechada {
   gap: 3rem;
 }
 
-/* 1. Lado Esquerdo: Texto */
 .instalaions-text {
   flex: 1;
   text-align: left;
@@ -555,7 +578,6 @@ a.button-profissional.agenda-fechada {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Container do Carrossel */
 .ambientes-container {
   position: relative;
   flex: 1;
@@ -568,19 +590,17 @@ a.button-profissional.agenda-fechada {
   position: relative;
   overflow: hidden;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* Sombra elegante sobre o fundo verde */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); 
 }
 
-/* Estilo direto da Imagem */
 .ambiente-img {
   width: 100%;
-  height: 380px; /* Aumentada a altura para valorizar a foto da clínica */
+  height: 380px; 
   object-fit: cover;
   display: block;
   border-radius: 16px;
 }
 
-/* Setas e Paginação */
 .amb-next, .amb-prev {
   color: #ffffff;
   transition: opacity 0.3s ease;
@@ -602,23 +622,21 @@ a.button-profissional.agenda-fechada {
 
 @media (max-width: 900px) {
   .ambiente-img {
-    height: 260px; /* Altura reduzida para celulares */
+    height: 260px;
   }
 }
 
 
-/* 1. Posiciona e estiliza o trilho da barra de progresso */
 .amb-pagination.swiper-pagination-progressbar {
   
   height: 5px;
-  background: rgba(255, 255, 255, 0.25); /* Fundo sutil translúcido */
+  background: rgba(255, 255, 255, 0.25); 
   border-radius: 16px 16px 0 0;
   overflow: hidden;
 }
 
-/* 2. Estiliza o preenchimento ativo da barra */
 .amb-pagination .swiper-pagination-progressbar-fill {
-  background-color: #ffffff !important; /* Cor da barra preenchida */
+  background-color: #ffffff !important; 
 }
 .location {
   background: linear-gradient(135deg, #1b4d3e 0%, #12352b 100%);
@@ -634,7 +652,6 @@ a.button-profissional.agenda-fechada {
   gap: 3rem;
 }
 
-/* 1. Moldura do Mapa */
 .location-map {
   flex: 1.1;
   height: 420px;
@@ -666,7 +683,6 @@ a.button-profissional.agenda-fechada {
   margin-bottom: 2rem;
 }
 
-/* Detalhes de Endereço/Estacionamento */
 .location-details {
   display: flex;
   flex-direction: column;
@@ -704,7 +720,6 @@ a.button-profissional.agenda-fechada {
   line-height: 1.4;
 }
 
-/* Botão de Rotas */
 .btn-maps {
   display: inline-block;
   background-color: #ffffff;
@@ -742,7 +757,7 @@ a.button-profissional.agenda-fechada {
     height: 300px;
   }
 }
-/* Container da Seção */
+
 .about {
   padding: 5rem 2rem;
   background-color: #f4f7f5;
@@ -752,7 +767,6 @@ a.button-profissional.agenda-fechada {
   box-sizing: border-box;
 }
 
-/* Card Emoldurado */
 .about-card {
   max-width: 1100px;
   width: 100%;
@@ -785,12 +799,12 @@ a.button-profissional.agenda-fechada {
   line-height: 1.3;
 }
 
-/* Grid de 2 Colunas */
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: stretch; /* Garante altura igual entre as duas colunas */
+  align-items: stretch; 
 }
 
 .about-text-block p {
@@ -799,7 +813,7 @@ a.button-profissional.agenda-fechada {
   color: #4a5568;
   line-height: 1.75;
   margin-bottom: 1.2rem;
-  text-align: justify; /* Alinha o texto na margem direita e esquerda */
+  text-align: justify; 
   hyphens: auto;
 }
 
@@ -808,12 +822,11 @@ a.button-profissional.agenda-fechada {
   flex-direction: column;
 }
 
-/* Estilização dos 3 Pilares na Coluna da Direita */
 .about-pillars {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  margin-top: 2rem; /* Aumente este valor (ex: 4rem, 5rem) para descer mais */
+  margin-top: 2rem; 
 }
 
 .pillar-item {
@@ -840,7 +853,6 @@ a.button-profissional.agenda-fechada {
   line-height: 1.4;
 }
 
-/* Banner de Destaque da Frase Final */
 .about-quote {
   margin-top: 2.5rem;
   background: linear-gradient(135deg, #1b4d3e 0%, #12352b 100%);
@@ -858,7 +870,6 @@ a.button-profissional.agenda-fechada {
   margin: 0;
 }
 
-/* Responsividade */
 @media (max-width: 900px) {
   .about-card {
     padding: 2rem 1.5rem;
